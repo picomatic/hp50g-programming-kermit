@@ -1,0 +1,25 @@
+#To upload programs created on PC
+sudo kermit settings-hp50g -l /dev/ttyUSB0
+
+#download editable programs from calc 
+sudo kermit -l /dev/ttyUSB0
+
+#get files examples
+(/home/andre/Downloads/hp_rpl_programmas/) C-Kermit>get RP
+(/home/andre/Downloads/hp_rpl_programmas/) C-Kermit>get VD
+(/home/andre/Downloads/hp_rpl_programmas/) C-Kermit>get FLAGS
+
+#put files from to to calculator
+(/home/andre/Downloads/hp_rpl_programmas/) C-Kermit>put VD
+
+
+#settings kermit
+set modem type direct
+set prefixing all
+set port /dev/ttyUSB0
+set speed 9600
+set carrier-watch off
+set flow none
+set parity none
+set block 3
+

@@ -1,0 +1,23 @@
+%%HP: T(1)A(R)F(.);
+´ 
+"Low pass filter, type 0 for solve" 
+
+{":F:
+:C:
+:R:" 
+
+{ 1. 0. } V } INPUT
+
+OBJç ç F C R
+´
+  IF 'F==0' THEN
+   '1/(2*á*R*C)' çNUM
+   ELSE IF 'C==0' THEN
+    '1/(2*á*R*F)' çNUM
+    ELSE IF 'R==0' THEN
+     '1/(2*á*C*F)' çNUM
+    END
+   END
+  END
+ª
+ª
