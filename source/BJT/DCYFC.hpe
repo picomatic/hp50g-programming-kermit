@@ -1,0 +1,53 @@
+´
+ "FUENTE Y DRENADOR COMUN"
+{
+{ "R1:" "Ingrese R1" 0 }
+{ "R2:" "Ingrese R2" 0 }
+{ "RD:" "Ingrese RD" 0 }
+{ "RS:" "Ingrese RS" 0 }
+{ "Id:" "Ingrese Corriente del Drenador" 0 }
+{ "Va:" "Ingrese Voltaje de Early" 0 }
+{ "K:" "Ingrese K" 0 }
+}
+2
+{ }
+{ 1E450 1E450 0 0 0 1E450 1E-3}
+INFORM
+DROP OBJç DROP
+ç R1 R2 RD RS Id Va K
+  ´
+   '2*É(K*Id)' EVAL 'gm' STO
+   'Va/Id' EVAL 'ro' STO
+   'INV(INV(R1)+INV(R2))' EVAL 'Zi' STO
+   'INV(INV(RD)+INV(RS*(1+gm*ro)+ro))' EVAL 'Zd' STO
+   'INV(INV(RS)+INV((ro+RD)/(1+gm*ro)))' EVAL 'Zs' STO
+   '-gm*RD*ro/(RD+RS+ro*(1+gm*RS))' EVAL 'AvDG' STO
+   'gm*RS*ro/(gm*RS*ro+RS+ro+RD)' EVAL 'AvSG' STO
+   
+   Zi Zd Zs 3  çLIST 'IMPED' STO
+   AvDG AvSG 2 çLIST 'GANAN' STO
+   
+   "Resultados: Impedancias"
+   {
+   { "Zi=" "Impedancia de Entrada" 0 }
+   { "Zd=" "Zo vista por el Drenador" 0 }
+   { "Zs=" "Zo vista por la Fuente" 0 }
+   }
+   { 1 1 }
+   IMPED
+   DUP
+   INFORM
+   DROP DROP
+   "Resultados: Ganancias"
+   {
+   { "AvDG=" "Ganancia de Drenador/Compuerta" 0 }
+   { "AvSG=" "Ganancia de Fuente/Compuerta" 0 }
+   }
+   { 1 1 }
+   GANAN
+   DUP
+   INFORM
+  ª
+  DROP DROP
+  { gm ro Zi Zd Zs AvDG AvSG IMPED GANAN} PURGE
+ª
