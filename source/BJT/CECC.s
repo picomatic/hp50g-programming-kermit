@@ -1,10 +1,10 @@
 @CECC.s - Common emitter and common collector impedance calculation
-@Dynamic pi model is used, r‡and ro are considered
+@Dynamic pi model is used, r<PI>and ro are considered
 <<
  "COMMON EMITTER & COLLECTOR"
 {
-{ "R1:" "Enter R1" 0 }
-{ "R2:" "Enter R2" 0 }
+{ "R1:" "Enter Rb1" 0 }
+{ "R2:" "Enter Rb2" 0 }
 { "RC:" "Enter RC" 0 }
 { "RE:" "Enter RE" 0 }
 { "Ic:" "Enter collector current" 0 }
@@ -18,18 +18,18 @@ INFORM
 DROP OBJ-> DROP
 -> R1 R2 Rc Re Ic Va B
    <<
-   'B*25E-3/Ic' EVAL 'r‡' STO
+   'B*25E-3/Ic' EVAL 'r<PI>' STO
    'Va/Ic' EVAL 'ro' STO
    'INV(INV(R1)+INV(R2))' EVAL 'Rb' STO   
-   'INV(INV(Rb)+INV(r‡+(B+1)*(Re*(Rc+ro)/(Rc+Re+ro))))' EVAL 'Zi' STO
-   'INV(INV(Rc)+INV(ro+Re*(Rb+r‡+B*ro)/(Re+Rb+r‡)' EVAL 'Zc' STO
-   'INV(INV(Re)+INV(r‡/B))' EVAL 'Ze' STO
-   '-B*INV(INV(Rc)+INV(ro))/(r‡+(B+1)*Re)' EVAL 'AvCB' STO
-   '(B+1)*Re/(r‡+(B+1)*Re)' EVAL 'AvEB' STO
+   'INV(INV(Rb)+INV(r<PI>+(B+1)*(Re*(Rc+ro)/(Rc+Re+ro))))' EVAL 'Zi' STO
+   'INV(INV(Rc)+INV(ro+Re*(Rb+r<PI>+B*ro)/(Re+Rb+r<PI>)' EVAL 'Zc' STO
+   'INV(INV(Re)+INV(r<PI>/B))' EVAL 'Ze' STO
+   '-B*INV(INV(Rc)+INV(ro))/(r<PI>+(B+1)*Re)' EVAL 'AvCB' STO
+   '(B+1)*Re/(r<PI>+(B+1)*Re)' EVAL 'AvEB' STO
    
    Zi Zc Ze 3 ->LIST 'IMPED' STO
    AvCB AvEB 2 ->LIST 'GAIN' STO
-   ro r‡ 2 ->LIST 'RO' STO  
+   ro r<PI> 2 ->LIST 'RO' STO  
  
    "Result: Impedanc"
    {
@@ -43,10 +43,10 @@ DROP OBJ-> DROP
    INFORM
    DROP DROP
 
-   "Result: Early effect ro and r‡"
+   "Result: Early effect ro and r<PI>"
    { 
    { "ro =" "ro resistance value" 0 }
-   { "r‡ =" "r‡ resistance value" 0 }
+   { "r<PI> =" "r<PI> resistance value" 0 }
    }
    { 1 1 }
    RO
@@ -65,5 +65,5 @@ DROP OBJ-> DROP
    INFORM
   >>
   DROP DROP
-  { r‡ ro Zi Zc Ze Rb AvCB AvEB IMPED GAIN RO} PURGE
+  { r<PI> ro Zi Zc Ze Rb AvCB AvEB IMPED GAIN RO} PURGE
 >>
