@@ -4,6 +4,10 @@
 You can type programs in a normal text editor and send them to your calculator. Now this is work in progress so not everything is implemented. 
 Use this a starting point. hp.sh contains the converting engine.
 
+## Before you start
+Some programs (ckermit, bbe) are needed to run the scripts, so before using the hp.sh and sendall.sh, run:
+    ./init.sh
+
 ## At the moment these special charakters are supported:
     <CR>   return
     <PI>   pi

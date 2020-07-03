@@ -11,6 +11,6 @@ fi
 echo "Error you have t give 1 parameter, the xx.s without the s!"
 
 #2D 3E
-#3C 43 52 3E        #<CR> return
-#3C 50 49 3E        #<PI> pi
-#3C 53 51  52 54 3E # Square root
+#3C 43 52 3E        #<CR>   return
+#3C 50 49 3E        #<PI>   pi
+#3C 53 51  52 54 3E #<SQRT> Square root
