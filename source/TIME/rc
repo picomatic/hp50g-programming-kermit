@@ -1,0 +1,24 @@
+%%HP: T(1)A(R)F(.);
+@rc.s - RC time
+´ 
+"RC time, input 0 to solve R,C or T" 
+{ ":R:
+:C:
+:T:" 
+{ 1. 0. } V } INPUT
+
+OBJç ç R C T
+´
+IF 'R==0' THEN
+ 'T/C' çNUM
+ELSE
+ IF 'C==0' THEN
+  'T/R' çNUM
+ ELSE
+  IF 'T==0' THEN
+  'R*C' çNUM
+  END
+ END
+END
+ª
+ª

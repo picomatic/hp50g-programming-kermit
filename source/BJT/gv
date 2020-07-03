@@ -1,0 +1,11 @@
+%%HP: T(1)A(R)F(.);
+@gv.s - Calculate gV BJT
+´ 
+"gV transistor gm*RC" 
+{ ":gm:
+:RC:" 
+{ 1. 0. } V } INPUT
+
+OBJç ç gm RC
+'gm*RC'
+ª

@@ -1,0 +1,22 @@
+%%HP: T(1)A(R)F(.);
+@icm.s - Ebers Moll equation BJT
+´ 
+"Ebers Moll equation IC at 20 degrees"
+{ ":VBE:
+:Is:
+:Ic:" 
+{ 1. 0. } V } INPUT
+
+OBJç ç VBE Is Ic
+´
+ IF 'Ic==0' THEN
+  'Is*EXP(VBE/.0253)' çNUM
+ ELSE IF 'VBE==0' THEN
+  '-(.0253*LN(Is/Ic))' çNUM
+ ELSE IF 'Is==0' THEN
+  'Ic/EXP(VBE/.0253)' çNUM
+ END
+ END
+ END
+ª
+ª

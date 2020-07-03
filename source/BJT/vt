@@ -1,0 +1,27 @@
+%%HP: T(1)A(R)F(.);
+@vt.s - Calculate VT BJT 
+´ 
+"Calculate VT BJT, enter 0 to solve" 
+
+{":VT:
+:T:" 
+
+{ 1. 0. } V } INPUT
+
+OBJç ç VT T
+´
+  'Uv*R1/(R1+R2)=Ub' 
+  'HFE*Re/10=(R1*R2)/(R1+R2)' 
+  2
+  çARRY
+  'R1'
+  'R2'
+  2
+  çARRY
+  'Re*20' çNUM
+  'Re*20' çNUM 
+  2
+  çARRY
+  MSLV
+ª
+ª

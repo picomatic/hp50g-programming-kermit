@@ -1,0 +1,29 @@
+%%HP: T(1)A(R)F(.);
+@ef.s - Calculate bias resistors R1 nd R2 emitter follower
+´ 
+"Bias val R1,R2 em. follower" 
+
+{":Ub:
+:Uv:
+:HFE:
+:Re:" 
+
+{ 1. 0. } V } INPUT
+
+OBJç ç Ub Uv HFE Re
+´
+  'Uv*R1/(R1+R2)=Ub' 
+  'HFE*Re/10=(R1*R2)/(R1+R2)' 
+  2
+  çARRY
+  'R1'
+  'R2'
+  2
+  çARRY
+  'Re*20' çNUM
+  'Re*20' çNUM 
+  2
+  çARRY
+  MSLV
+ª
+ª

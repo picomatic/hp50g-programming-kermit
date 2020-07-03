@@ -1,0 +1,24 @@
+%%HP: T(1)A(R)F(.);
+@gm.s - Calculate gm BJT
+´ 
+"gm transistor gm=io/vi" 
+{ ":gm:
+:io:
+:vi:" 
+{ 1. 0. } V } INPUT
+
+OBJç ç gm io vi
+´
+IF 'gm==0' THEN
+ 'io/vi' çNUM
+ELSE
+ IF 'io==0' THEN
+  'gm*vi' çNUM
+ ELSE
+  IF 'vi==0' THEN
+  'io/gm' çNUM
+  END
+ END
+END
+ª
+ª

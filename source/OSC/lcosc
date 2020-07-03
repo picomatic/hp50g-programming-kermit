@@ -1,0 +1,15 @@
+%%HP: T(1)A(R)F(.);
+@lcosc.s - Frequencu of electric oscillation
+´
+"Calculate Fosc, enter 0 to solve"
+
+{":L:
+:C:"
+
+{ 1. 0. } V } INPUT
+
+OBJç ç L C
+´
+  '1/(2*á*É(L*C))' çNUM
+ª
+ª

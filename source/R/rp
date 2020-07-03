@@ -1,0 +1,13 @@
+%%HP: T(1)A(R)F(.);
+@rp.s - Parallel resistors
+´ 
+"PARALLEL RESISTORS" 
+
+{":R1:
+:R2:" 
+
+{ 1. 0. } V } INPUT
+
+OBJç ç R1 R2
+'R1*R2/(R1+R2)'
+ª

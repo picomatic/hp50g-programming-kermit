@@ -1,0 +1,12 @@
+%%HP: T(1)A(R)F(.);
+@ri.s - Calculate input impedance BJT
+´ 
+"Input Impedance" 
+{ ":RB:
+:R2:
+:RE:
+:B:" 
+{ 1. 0. } V } INPUT
+OBJç ç RB R2 RE B
+'1/(1/RB+1/R2+1/(B*RE))' çNUM
+ª

@@ -1,0 +1,26 @@
+%%HP: T(1)A(R)F(.);
+@vd.s - Voltage devider
+´ 
+  "Voltage devider"
+{":Ro:
+:R2:
+:Vi:
+:Vo:"
+  { 1. 0. } V } INPUT  
+  OBJç ç 
+  Ro R2 Vi Vo 
+´  
+  IF 'Ro==0' THEN
+  '(Vo*R2)/(Vi-Vo)' çNUM
+  ELSE IF 'R2==0' THEN
+  '(Vi-Vo)*Ro/Vo' çNUM
+  ELSE IF 'Vi==0' THEN
+  '(Vo*R2+Vo*Ro)/Ro' çNUM
+  ELSE IF 'Vo==0' THEN
+  '(Ro*Vi)/(R2+Ro)' çNUM
+  END
+  END
+  END
+  END
+ª
+ª
