@@ -1,7 +1,10 @@
 %%HP: T(1)A(R)F(.);
 @c1.s - Frequency of electric oscillation 
 ´ 
-"Frequency of electric oscillation"
+"Frequency of electric oscillation
+|---||---|
+|---~~---|
+"
 { ":fo:
 :L:
 :C:" 
@@ -11,13 +14,13 @@ OBJç ç fo L C
 ´
  IF 'fo==0' THEN
   'fo=1/(2*á*É(L*C))'
-  '1/(2*á*É(L*C))' çNUM
+  '1/(2*á*É(L*C))' çNUM "fo" çTAG
  ELSE IF 'L==0' THEN
   'L=1/(C*(2*á*fo)^2)'
-  '1/(C*(2*á*fo)^2)' çNUM
+  '1/(C*(2*á*fo)^2)' çNUM "L" çTAG
  ELSE IF 'C==0' THEN
   'C=1/(L*(2*á*fo)^2)'
-  '1/(L*(2*á*fo)^2)' çNUM
+  '1/(L*(2*á*fo)^2)' çNUM "C" çTAG
  END
  END
  END

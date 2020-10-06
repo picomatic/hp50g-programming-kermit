@@ -1,6 +1,6 @@
-@c2.s - Change in terminal voltage of R in RC series circuit
+@c3.s - Time constant for an RC series circuit 
 << 
-"Change in terminal voltage of R in RC series circuit
+"Time constant for an RC series circuit
   -/////----||---
   |__Vr__|
   |______V______|"
