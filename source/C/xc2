@@ -1,0 +1,21 @@
+%%HP: T(1)A(R)F(.);
+@xc.s - Capacitor Xc
+´ 
+"Xc for f" 
+{":F:
+:C:
+:Xc:" 
+{ 1. 0. } V } INPUT
+OBJç ç F C Xc
+´
+ IF 'F==0' THEN
+   '1/(2*á*Xc*C)' çNUM
+ ELSE IF 'C==0' THEN
+   '1/(2*á*F*Xc)' çNUM
+ ELSE IF 'Xc==0' THEN
+   '1/(2*á*F*C)' çNUM
+ END
+ END
+ END
+ª
+ª

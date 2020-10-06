@@ -1,0 +1,36 @@
+%%HP: T(1)A(R)F(.);
+@c1.s - Change in terminal voltage of R in RC series circuit
+´ 
+"Change in terminal voltage of R 
+in RC series circuit"
+{ ":Vr:
+:V:
+:C:
+:R:
+:t:" 
+{ 1. 0. } V } INPUT
+
+OBJç ç Vr V C R t
+´
+ IF 'Vr==0' THEN
+  'Vr=V*EXP(-(t/(R*C)))'
+  'V*EXP(-(t/(R*C)))' çNUM
+ ELSE IF 'V==0' THEN
+  'V=Vr/EXP(-t/C/R)'
+  'Vr/EXP(-t/C/R)' çNUM
+ ELSE IF 'C==0' THEN
+  'C=-t/LN(Vr/V)/R'
+  '-t/LN(Vr/V)/R' çNUM
+ ELSE IF 'R==0' THEN
+  'R=-t/C/LN(Vr/V)'
+  '-t/C/LN(Vr/V)' çNUM
+ ELSE IF 't==0' THEN
+  't=-LN(Vr/V)*C*R'
+  '-LN(Vr/V)*C*R' çNUM
+ END
+ END
+ END
+ END
+ END
+ª
+ª
