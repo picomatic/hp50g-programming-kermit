@@ -1,6 +1,6 @@
-%%HP: T(1)A(R)F(.);
-@c1.s - Frequency of electric oscillation 
-« 
+%%HP: T(3)A(R)F(.);
+@c1 - Frequency of electric oscillation 
+\<< 
 "Frequency of electric oscillation
 |---||---|
 |---~~---|
@@ -10,19 +10,19 @@
 :C:" 
 { 1. 0. } V } INPUT
 
-OBJ  fo L C 
-«
+OBJ\-> \-> fo L C 
+\<<
  IF 'fo==0' THEN
-  'fo=1/(2*‡*ƒ(L*C))'
-  '1/(2*‡*ƒ(L*C))' NUM "fo" TAG
+  'fo=1/(2*\pi*\v/(L*C))'
+  '1/(2*\pi*\v/(L*C))' \->NUM "fo" \->TAG
  ELSE IF 'L==0' THEN
-  'L=1/(C*(2*‡*fo)^2)'
-  '1/(C*(2*‡*fo)^2)' NUM "L" TAG
+  'L=1/(C*(2*\pi*fo)^2)'
+  '1/(C*(2*\pi*fo)^2)' \->NUM "L" \->TAG
  ELSE IF 'C==0' THEN
-  'C=1/(L*(2*‡*fo)^2)'
-  '1/(L*(2*‡*fo)^2)' NUM "C" TAG
+  'C=1/(L*(2*\pi*fo)^2)'
+  '1/(L*(2*\pi*fo)^2)' \->x NUM "C" \->TAG
  END
  END
  END
-»
-»
+\>>
+\>>
