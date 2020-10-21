@@ -1,0 +1,36 @@
+%%HP: T(3)A(R)F(.);
+@c8 - CLosed loop gain of an opamp inverting feedback circuit
+\<< 
+"      --/\\\/\\\-  CLosed loop gain
+ Zi  |   Zf  | of an opamp
+-/\\\/\\\---|\\\___| inverting feedback 
+       -|/     circuit
+       |"
+{
+":Vo:
+:Vi:
+:Zi:
+:Zf:
+"
+{ 1. 0. } V } INPUT
+	
+OBJ\-> \-> Vo Vi Zi Zf
+\<<
+ IF 'Vo==0' THEN 
+ 'Vo=-(Zf/Zi)*Vi'
+ '-(Zf/Zi)*Vi' \->NUM "Vo" \->TAG
+ ELSE IF 'Vi==0' THEN
+ 'Vi=-(Vo*Zi)/Zf'
+ '-(Vo*Zi)/Zf' \->NUM "Vi" \->TAG
+ ELSE IF 'Zi==0' THEN
+ 'Zi=-(Zf*Vi)/Vo'
+ '-(Zf*Vi)/Vo' \->NUM "Zi" \->TAG
+ ELSE IF 'Zf==0' THEN
+ 'Zf=-(Vo*Zi)/Vi'
+ '-(Vo*Zi)/Vi' \->NUM "Zf" \->TAG
+END
+END
+END
+END
+\>>
+\>>

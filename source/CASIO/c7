@@ -1,0 +1,34 @@
+%%HP: T(3)A(R)F(.);
+@c7 - Power factor
+\<< 
+"Power factor
+     /|
+   Z/ |
+   /  |
+  /\Gh__|
+     R
+"
+{
+":R:
+:Z:
+:\Gh:
+"
+ 
+{ 1. 0. } V } INPUT
+
+OBJ\-> \-> R Z \Gh
+\<<
+ IF '\Gh==0' THEN 
+ '\Gh=ACOS(R/Z)'
+ 'ACOS(R/Z)' \->NUM "\Gh" \->TAG
+ ELSE IF 'Z==0' THEN
+ 'Z=R/COS(\Gh)'
+ 'R/COS(\Gh)' \->NUM "Z" \->TAG
+ ELSE IF 'R==0' THEN
+ 'R=COS(\Gh)*Z'
+ 'COS(\Gh)*Z' \->NUM "R" \->TAG
+END
+END
+END 
+\>>
+\>>
