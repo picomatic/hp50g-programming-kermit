@@ -4,13 +4,14 @@
 "      --/\\\/\\\-  CLosed loop gain
  Zi  |   Zf  | of an opamp
 -/\\\/\\\---|\\\___| inverting feedback 
-Vi     -|/ Vo  circuit
-     ///"
+       -|/     circuit
+       |"
 {
 ":Vo:
 :Vi:
 :Zi:
-:Zf:"
+:Zf:
+"
 { 1. 0. } V } INPUT
 	
 OBJ\-> \-> Vo Vi Zi Zf
